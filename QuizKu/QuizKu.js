@@ -84,7 +84,7 @@ for (var i=1;i<=10;i++){
       for (var j=0;j<=3;j++){
         acak[j]=Math.floor(Math.random()* 2);
       }
-      acak[quiz[quizNo][6]-1]=1;
+      acak[(quiz[quizNo][6])-1]=1;
       cekacak=0;
       for (var j=0;j<=3;j++){
         cekacak+=acak[j];
