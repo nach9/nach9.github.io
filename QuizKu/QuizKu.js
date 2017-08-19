@@ -25,6 +25,7 @@ function prizefinal(nilai){
   return prize[nilai]*1000;
 }
 
+// check answe within quiz
 function periksajawab(quizNo,jawab){
   if(jawab.toUpperCase()==String.fromCharCode(64+quiz[quizNo][6])){
     return true;
@@ -44,7 +45,7 @@ for (var i=1;i<=10;i++){
     quizNo = Math.floor(Math.random()* quiz.length);
   }
 
-  //mark used question
+  //mark used question prevent duplicate
   quiz[quizNo][0]='XXX';
 
   jawab=prompt(quiz[quizNo][1] + ' ?' +
@@ -54,7 +55,7 @@ for (var i=1;i<=10;i++){
     '\nD. ' + quiz[quizNo][5] +
     '\n\nPlease Select ABCD or F (50-50 Help) or L (ask Luki) '
   );
-
+  // check option
   if (jawab.toUpperCase()=='A' || jawab.toUpperCase()=='B'||jawab.toUpperCase()=='C'|| jawab.toUpperCase()=='D'){
 
       if(periksajawab(quizNo,jawab)){
@@ -67,7 +68,7 @@ for (var i=1;i<=10;i++){
       }
   }
   else if(jawab.toUpperCase()=='L'){
-    luki=prompt('Luki : Hi there ... I think the answer is ' + String.fromCharCode(65 + Math.floor(Math.random()* 4)) +'\n\nDo you agree with Luki\'s answer?\n\nPlease select ABCD');
+    luki=prompt('Luki : Hi there ... I think the answer is ' + String.fromCharCode(65 + Math.floor(Math.random()* 4)) +'\n\nDo you agree with Luki\'s answer?\n\nPlease select A,B,C, or D');
     if(periksajawab(quizNo,luki)){
       alert('Nice Answer!');
       benarJawab++;
@@ -77,19 +78,24 @@ for (var i=1;i<=10;i++){
       break ;
     }
   }
+
   else if(jawab.toUpperCase()=='F'){
-    var cekacak;
-    while(cekacak!=2){
-      var acak =[1,1,1,1];
+    var cekacak=0;
+    var acak =[0,0,0,0];
+    // remove 2 wrong answer randomly
+    while (!(cekacak==2 && acak[quiz[quizNo][6]-1]==1))
+    {
+      acak =[0,0,0,0];
       for (var j=0;j<=3;j++){
         acak[j]=Math.floor(Math.random()* 2);
       }
-      acak[(quiz[quizNo][6])-1]=1;
+
       cekacak=0;
       for (var j=0;j<=3;j++){
         cekacak+=acak[j];
       }
     }
+
     pilihan='';
     if(acak[0]==1){pilihan+='A.'+ quiz[quizNo][2];}
     if(acak[1]==1){pilihan+='\nB.'+ quiz[quizNo][3];}
@@ -111,7 +117,8 @@ for (var i=1;i<=10;i++){
   }
 
 }
-
+//show final score
 alert('Congrats... youve got ' + prizefinal(benarJawab).toLocaleString() + ' Rupiah' );
 
+//reload page start from beginning
 location.reload();
