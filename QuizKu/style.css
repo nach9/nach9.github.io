@@ -1,4 +1,19 @@
 body{
-	background-color:black;
+	background-color:DarkBlue;
+}
 
+h1{
+	font-family: Slabo;
+	color: white;
+	text-align: center;
+	font-size: 45px;
+	margin-top: 150px;
+	margin-bottom: 0px;
+}
+
+h2{
+	text-align: center;
+	margin-top: 0px;
+	color: grey;
+	font-size: 15px;
 }
