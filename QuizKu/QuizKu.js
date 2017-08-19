@@ -113,3 +113,5 @@ for (var i=1;i<=10;i++){
 }
 
 alert('Congrats... youve got ' + prizefinal(benarJawab).toLocaleString() + ' Rupiah' );
+
+location.reload();
