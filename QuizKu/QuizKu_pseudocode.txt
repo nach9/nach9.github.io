@@ -1,0 +1,8 @@
+TAMPILKAN pertanyaan acak dari yang tersedia
+PILIH pilihan menjawab
+  JIKA menjawab A,B,C,D cek jawaban
+    JIKA benar lanjut dan mendapat nilai sesuai tingkat pertanyaan , JIKA salah berhenti.
+  JIKA pilih F (50-50) hilangkan 2 jawaban salah . Lanjutkan memilih jawaban.
+  JIKA pilih L (Tanya Luki) , akan diberi jawaban Luki . Lanjutkan memilih jawaban.
+ULANGI sebanyak 10 x selama jawaban benar
+TAMPILKAN nilai yag diperoleh
