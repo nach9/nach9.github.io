@@ -91,10 +91,10 @@ for (var i=1;i<=10;i++){
       }
     }
     pilihan='';
-    if(acak[0]==1){pilihan+='A\n';}
-    if(acak[1]==1){pilihan+='B\n';}
-    if(acak[2]==1){pilihan+='C\n';}
-    if(acak[3]==1){pilihan+='D\n';}
+    if(acak[0]==1){pilihan+='A.'+ quiz[quizNo][2];}
+    if(acak[1]==1){pilihan+='\nB.'+ quiz[quizNo][3];}
+    if(acak[2]==1){pilihan+='\nC.'+ quiz[quizNo][4];}
+    if(acak[3]==1){pilihan+='\nD.'+ quiz[quizNo][5];}
     jawab=prompt('Please select from answer below\n' + pilihan);
     if(periksajawab(quizNo,jawab)){
       alert('Nice Answer!');
